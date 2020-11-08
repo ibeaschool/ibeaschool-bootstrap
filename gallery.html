@@ -24,6 +24,14 @@
   <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
 
+    <!-- Unite Gallery (for tiles) -->
+    <script type='text/javascript' src='assets/unitegallery/jquery.min.js'></script>
+    <script type='text/javascript' src='assets/unitegallery/js/unitegallery.min.js'></script>    
+    <link rel='stylesheet' href='assets/unitegallery/css/unite-gallery.css' type='text/css' /> 
+    <script src='assets/unitegallery/themes/tiles/ug-theme-tiles.js' type='text/javascript'></script>
+    <link rel='stylesheet' href='assets/unitegallery/themes/default/ug-theme-default.css' type='text/css' />
+
+
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
@@ -64,7 +72,7 @@
       <article>
         <section>
           <div class="content-wrapper">
-            <div class="content">
+            <div class="content section-title">
 
               <h2>Primary School</h2>
               <div id="gallery-primary" style="display:none;">
@@ -126,6 +134,7 @@
                   
               </div>
 
+              <br/>  
               <h2>High School</h2>
               <div id="gallery-highschool" style="display:none;">
                 <img alt="charts" 
@@ -176,6 +185,7 @@
               </div>
 
 
+              <br/>  
               <h2>Annual Day (Different Years)</h2>
               <div id="gallery-annual" style="display:none;">
                 <img alt="dress" 
@@ -215,6 +225,7 @@
 
             </div>
 
+            <br/>  
             <h2>Guest Lectures and Workshops</h2>
             <div id="gallery-guest" style="display:none;">
               <img alt="meeting" 
@@ -243,6 +254,7 @@
                 data-image="assets/gallery/guest-lecture.jpg">
             </div>
 
+            <br/>  
             <h2>Aftermath of Cyclone Gaja</h2>
             <div id="gallery-cyclone" style="display:none;">
               <img alt="arch" 
@@ -267,6 +279,7 @@
 
             </div>
 
+            <br/>  
             <h2>Aftermath of Cyclone Gaja New look of the school after repairs from Cycle Gaja</h2>
             <div id="gallery-repairs" style="display:none;">
               <img alt="arch" 
@@ -285,6 +298,7 @@
                 data-image="assets/gallery/repairs-roof.jpg"> 
             </div>
 
+            <br/>  
             <h2>Some villages near the school</h2>
             <div id="gallery-village" style="display:none;">
               <img alt="houses" 
@@ -313,7 +327,7 @@
                 data-image="assets/gallery/village-roof.jpg">
             </div>
 
-
+            <br/>  
             <h2>Fun with visitors</h2>
             <div id="gallery-visitors" style="display:none;">
               <img alt="painting" 
@@ -387,7 +401,9 @@
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/jquery/jquery.min.js"></script>
+
+  <!-- Commenting this line out, since for gallery tile, we need the other jquery -->
+  <!-- <script src="assets/vendor/jquery/jquery.min.js"></script> -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
@@ -396,71 +412,57 @@
   <script src="assets/vendor/venobox/venobox.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+       <!-- Template Main JS File -->
+      <script src="assets/js/main.js"></script>
 
+      <!-- Gallery JS -->
       <script type="text/javascript">
       // this horrible thing is documented here:
       // https://unitegallery.net/index.php?page=tiles-columns-options
 
       // WARNING: alt and data-description are REQUIRED even though they
       //          are labeled as optional.
-      jQuery(document).ready(function(){ 
-        jQuery("#gallery-primary").unitegallery({
+
+      var settings = {
           gallery_theme: "tiles",
           tiles_min_columns: 3,
-          tiles_max_columns: 3
-        }); 
-      });
+          tiles_max_columns: 3,
+          tiles_space_between_cols: 10,
+          tiles_include_padding: true        
+      };
+
       jQuery(document).ready(function(){ 
-        jQuery("#gallery-highschool").unitegallery({
-          gallery_theme: "tiles",
-          tiles_min_columns: 3,
-          tiles_max_columns: 3
-        }); 
+        jQuery("#gallery-primary").unitegallery(settings); 
       });
+
       jQuery(document).ready(function(){ 
-        jQuery("#gallery-annual").unitegallery({
-          gallery_theme: "tiles",
-          tiles_min_columns: 3,
-          tiles_max_columns: 3
-        }); 
+        jQuery("#gallery-highschool").unitegallery(settings); 
       });
+
       jQuery(document).ready(function(){ 
-        jQuery("#gallery-guest").unitegallery({
-          gallery_theme: "tiles",
-          tiles_min_columns: 3,
-          tiles_max_columns: 3
-        }); 
+        jQuery("#gallery-annual").unitegallery(settings); 
       });
+
       jQuery(document).ready(function(){ 
-        jQuery("#gallery-cyclone").unitegallery({
-          gallery_theme: "tiles",
-          tiles_min_columns: 3,
-          tiles_max_columns: 3
-        }); 
+        jQuery("#gallery-guest").unitegallery(settings); 
       });
+
       jQuery(document).ready(function(){ 
-        jQuery("#gallery-repairs").unitegallery({
-          gallery_theme: "tiles",
-          tiles_min_columns: 3,
-          tiles_max_columns: 3
-        }); 
+        jQuery("#gallery-cyclone").unitegallery(settings); 
       });
+
       jQuery(document).ready(function(){ 
-        jQuery("#gallery-village").unitegallery({
-          gallery_theme: "tiles",
-          tiles_min_columns: 3,
-          tiles_max_columns: 3
-        }); 
+        jQuery("#gallery-repairs").unitegallery(settings); 
       });
+      
       jQuery(document).ready(function(){ 
-        jQuery("#gallery-visitors").unitegallery({
-          gallery_theme: "tiles",
-          tiles_min_columns: 3,
-          tiles_max_columns: 3
-        }); 
+        jQuery("#gallery-village").unitegallery(settings); 
       });
+      
+      jQuery(document).ready(function(){ 
+        jQuery("#gallery-visitors").unitegallery(settings); 
+      });
+
     </script>
 
 
