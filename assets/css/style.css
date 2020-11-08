@@ -596,6 +596,20 @@ section {
   min-height: 400px;
 }
 
+.about-foreign .image {
+  background: url("../img-school/high-library.jpg") center center no-repeat;
+  background-size: cover;
+  min-height: 400px;
+}
+.about-domestic .image {
+  background: url("../img-school/students-studying.jpg") center center no-repeat;
+  background-size: cover;
+  min-height: 400px;
+}
+
+
+
+
 @media (max-width: 667px) {
   .about .image img {
     max-width: 100%;
